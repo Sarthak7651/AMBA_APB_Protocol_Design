@@ -37,26 +37,28 @@ module tb_m;
 
   initial begin
     presetn = 0;
-    repeat(5) @(posedge pclk)
+    repeat(5) @(posedge pclk);
     presetn = 1;
     newd = 1;
     addrin = 4;
     datain = 255;
     wr = 1;
     prdata = 255;
-    @(posedge pclk)
+    @(posedge pclk);
     pready = 1'b1;
-    @(posedge pclk)
+    @(posedge pclk);
+    
+    
     newd = 1;
     addrin = 4;
     datain = 0;
     wr = 0;
     prdata = 255;
-    @(posedge pclk)
+    @(posedge pclk);
     pready = 1'b1;
-    @(posedge pclk)
+    @(posedge pclk);
     newd = 1'b0;
-    @(posedge pclk)
+    @(posedge pclk);
     end
     
     initial begin
