@@ -1,4 +1,4 @@
-module apb_s
+module apb3_s
   (input pclk,
    input presetn,
    input psel,
