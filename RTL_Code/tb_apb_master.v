@@ -13,6 +13,7 @@ module tb_m;
   wire [3:0] paddr;
   wire [7:0] pwdata;
   wire pwrite;
+  wire slverr;
   wire [7:0] dataout;
 
   apb_m dut (
@@ -34,6 +35,11 @@ module tb_m;
     );
 
   always #10 pclk=~pclk;
+  
+  initial begin
+  $dumpfile("dump.vcd");   // EPWave looks for exactly this name
+  $dumpvars(0, tb_m);      // dump all signals in tb_m and below
+  end
 
   initial begin
     presetn = 0;
@@ -62,8 +68,8 @@ module tb_m;
     end
     
     initial begin
-    #170;
-    $stop;
+    #400;
+    $finish;
     end
 endmodule
 
