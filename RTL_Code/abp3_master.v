@@ -1,4 +1,4 @@
-module apb_m
+module apb3_m
   (input pclk,
    input presetn,
    input [3:0] addrin,
