@@ -7,7 +7,7 @@ module apb_s
    input [3:0] paddr,
    input [7:0] pwdata,
 
-   input s_wait
+   input s_wait,
    
    output reg pready,
    output reg [7:0] prdata,
@@ -46,9 +46,11 @@ module apb_s
           if(psel && penable)
             begin 
               if(s_wait) nstate = write;
+              else begin
               pready = 1'b1;
               mem[paddr] = pwdata;
               nstate = idle;
+              end
             end
           else 
             begin
@@ -61,9 +63,11 @@ module apb_s
           if(psel && penable)
             begin
               if(s_wait) nstate = read;
+              else begin
               pready = 1'b1;
               prdata = mem[paddr];
               nstate = idle;
+              end
             end
           else nstate = idle;
         end
