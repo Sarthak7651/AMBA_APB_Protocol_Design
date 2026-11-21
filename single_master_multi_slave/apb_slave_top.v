@@ -1,4 +1,4 @@
-module apb_multi_slave
+module apb_slave_top
   (
     input pclk,
     input presetn,
@@ -18,7 +18,7 @@ module apb_multi_slave
 
   reg [1:0] state,nstate;
 
-  bit addr_err,addv_err,data_err,setup_apb_err;
+  wire addr_err,addv_err,data_err,setup_apb_err;
   // setup - correct apb cycles
   //  addr_range - should be less than 16
   //   addr_val - be greater than or equal to 0
