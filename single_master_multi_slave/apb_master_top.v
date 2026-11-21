@@ -67,14 +67,14 @@ module apb_master_top
           psel1 <= 1'b0;
           psel2 <= 1'b0;
         end
-      else if(nstate = idle)
+      else if(nstate == idle)
         begin
           psel1 <= 1'b0;
           psel2 <= 1'b0;
         end
       else if(nstate == enable || nstate == setup)
         begin
-          if(slv_addr_in=2'b01) 
+          if(slv_addr_in == 2'b01) 
             begin
               psel1 <= 1'b1;
               psel2 <= 1'b0;
