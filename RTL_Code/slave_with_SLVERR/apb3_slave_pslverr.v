@@ -1,4 +1,4 @@
-module apb3_slave
+module apb3_slave_pslverr
   (
     input pclk,
     input presetn,
