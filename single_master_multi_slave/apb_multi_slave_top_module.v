@@ -1,4 +1,4 @@
-module mul_slave
+module multi_slave_top_module
   (
     input pclk,
     input presetn,
