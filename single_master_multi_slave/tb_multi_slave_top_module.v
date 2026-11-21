@@ -1,4 +1,4 @@
-module tb_mul_slave;
+module tb_multi_slave_top_module;
     // Define testbench ports
     reg pclk = 0;
     reg presetn;
@@ -11,7 +11,7 @@ module tb_mul_slave;
     wire [7:0] dataout;
     
     // Instantiate the mul_slave module
-    mul_slave dut (
+    multi_slave_top_module dut (
         .pclk(pclk),
         .presetn(presetn),
         .slv_addr_in(slv_addr_in),
