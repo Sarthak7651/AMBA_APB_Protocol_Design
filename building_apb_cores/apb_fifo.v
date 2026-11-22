@@ -101,7 +101,7 @@ module apb_fifo
           read_data : 
             begin
               rdata <= mem[addr];
-              if(cwait < 2)
+              if(cwait < 2) //to match read latency
                 begin
                   state <= read_data;
                   cwait <= cwait+1;
